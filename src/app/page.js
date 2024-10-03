@@ -57,23 +57,33 @@ export default function Home() {
           <p className="text-lg text-blue-600">{greeting}</p>
         )}
 
-        {/* Contenedor para Goku y su información */}
-        <div className="flex mt-8">
-          {/* Contenedor de la imagen de Goku */}
-          <div className="w-48 h-72 bg-gray-800 flex items-center justify-center mr-4">
-            <img
-              src="/goku.png" // Ruta de la imagen de Goku
-              alt="Goku"
-              className="h-full object-contain" // Asegúrate de que la imagen se ajuste dentro del contenedor
-            />
-          </div>
-
-          {/* Contenedor de información de Goku */}
-          <div className="flex-1 h-72 bg-gray-800 p-4 text-white">
-            <h2 className="text-xl font-bold">Nombre: Goku</h2>
-            <p>Ki: 9000</p>
-            {/* Agrega más información aquí si lo deseas */}
-          </div>
+        {/* Tabla de personajes */}
+        <div className="mt-8 w-full max-w-3xl bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+          <table className="min-w-full">
+            <thead>
+              <tr className="bg-orange-500 text-white">
+                <th className="py-2 px-4 text-left">ID</th>
+                <th className="py-2 px-4 text-left">Nombre</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { id: "01", name: "Goku" },
+                { id: "02", name: "Vegeta" },
+                { id: "03", name: "Piccolo" },
+                { id: "04", name: "Bulma" },
+                { id: "05", name: "Freezer" },
+              ].map((character) => (
+                <tr
+                  key={character.id}
+                  className="hover:bg-blue-600 text-white transition duration-200"
+                >
+                  <td className="py-2 px-4">{character.id}</td>
+                  <td className="py-2 px-4">{character.name}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </>
