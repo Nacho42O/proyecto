@@ -19,12 +19,12 @@ export default function Home() {
   return (
     <>
       {/* Header con el logo y el título */}
-      <header className="w-full bg-orange-500 p-2 flex items-center justify-center">
+      <header className="w-full bg-orange-500 p-4 flex items-center justify-center">
         {/* Logo a la izquierda */}
         <img
           src="/logo.png" // Ruta del logo
           alt="Dragon Ball Logo"
-          className="center flex item-end h-20 mr-4" // Ajusta el tamaño del logo
+          className="h-20 mr-4" // Ajusta el tamaño del logo
         />
         {/* Título centrado */}
         <h1 className="text-white text-3xl font-bold">Dragon Ball Pokedex</h1>
@@ -56,6 +56,25 @@ export default function Home() {
         {greeting && (
           <p className="text-lg text-blue-600">{greeting}</p>
         )}
+
+        {/* Contenedor para Goku y su información */}
+        <div className="flex mt-8">
+          {/* Contenedor de la imagen de Goku */}
+          <div className="w-48 h-72 bg-gray-800 flex items-center justify-center mr-4">
+            <img
+              src="/goku.png" // Ruta de la imagen de Goku
+              alt="Goku"
+              className="h-full object-contain" // Asegúrate de que la imagen se ajuste dentro del contenedor
+            />
+          </div>
+
+          {/* Contenedor de información de Goku */}
+          <div className="flex-1 h-72 bg-gray-800 p-4 text-white">
+            <h2 className="text-xl font-bold">Nombre: Goku</h2>
+            <p>Ki: 9000</p>
+            {/* Agrega más información aquí si lo deseas */}
+          </div>
+        </div>
       </div>
     </>
   );
