@@ -1,7 +1,8 @@
+// src/components/Footer.js
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-4">
-      <div className="py-4 container mx-auto text-center">
+    <footer className="bg-gray-800 text-white py-1 mt-0">
+      <div className="py-2 container mx-auto text-center">
         <p>© {new Date().getFullYear()} Dragon Ball Fansite. All rights reserved.</p>
         <p>
           Built with 💙 by [Nacho y Cris]

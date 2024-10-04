@@ -10,12 +10,12 @@ export default function CharacterList() {
   ];
 
   return (
-    <div className="mt-8 w-full max-w-3xl bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-      <table className="min-w-full">
+    <div className="mt-8 w-full max-w-3xl mx-auto bg-black p-4 shadow-lg">
+      <table className="min-w-full bg-gray-800 rounded-lg"> {/* Solo redondeo superior */}
         <thead>
-          <tr className="bg-orange-500 text-white">
-            <th className="py-2 px-4 text-left">ID</th>
-            <th className="py-2 px-4 text-left">Nombre</th>
+          <tr className="bg-orange-500 text-white rounded-tl-lg"> {/* Fondo naranja y redondeo superior */}
+            <th className="py-2 px-4 text-left rounded-tl-lg">ID</th> {/* Redondeo de la esquina superior izquierda */}
+            <th className="py-2 px-4 text-left rounded-tr-lg">Nombre</th> {/* Redondeo de la esquina superior derecha */}
           </tr>
         </thead>
         <tbody>
