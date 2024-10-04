@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Header from '../components/header'; // Importar el componente Header
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -23,14 +24,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="w-full bg-orange-500 p-2 flex items-center justify-center">
-        <img
-          src="/logo.png"
-          alt="Dragon Ball Logo"
-          className="h-16 mr-2"
-        />
-        <h1 className="text-white text-2xl font-bold">Dragon Ball Pokedex</h1>
-      </header>
+      <Header /> {/* Usar el componente Header */}
 
       <div className="flex flex-col items-center justify-center min-h-screen bg-black">
         <h2 className="text-4xl font-bold mb-4 text-white">Página Básica</h2>
@@ -73,7 +67,6 @@ export default function Home() {
                   <td className="py-2 px-4">
                     <Link
                       href={`/personajes?nombre=${character.name.toLowerCase()}`} // Enlace a la página de personajes
-                    
                     >
                       {character.name}
                     </Link>
