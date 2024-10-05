@@ -3,7 +3,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-800 text-white mt-0">
       <div className="py-1 container mx-auto text-center">
-        <p>© {new Date().getFullYear()} Dragon Ball Fansite. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Dragon Ball DragonDex. All rights reserved.</p>
         <p>
           Built with 💙 by Nacho y Cris
         </p>
