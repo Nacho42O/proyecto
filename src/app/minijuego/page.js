@@ -88,10 +88,10 @@ export default function Minijuego() {
             <div className="text-xs md:text-sm py-4 font-bold text-center">
               El jugador 1 presiona la tecla (A) y el jugador 2 la tecla (L). ¡Solo tienen 5 segundos!
             </div>
-            <div className="flex flex-col items-center md:flex-row md:space-x-4">
+            <div className="flex flex-col items-center space-y-4">
               <div className="flex items-center">
-                <label>Selecciona Jugador 1:</label>
-                <select value={player1} onChange={handleSelectPlayer1} className="ml-2 text-black">
+                <label className="mr-2">Selecciona Personaje 1:</label>
+                <select value={player1} onChange={handleSelectPlayer1} className="mt-2 text-black">
                   <option value="Goku">Goku</option>
                   <option value="Vegeta">Vegeta</option>
                   <option value="Piccolo">Piccolo</option>
@@ -99,9 +99,10 @@ export default function Minijuego() {
                   <option value="Freezer">Freezer</option>
                 </select>
               </div>
-              <div className="flex items-center mt-4 md:mt-0">
-                <label>Selecciona Jugador 2:</label>
-                <select value={player2} onChange={handleSelectPlayer2} className="ml-2 text-black">
+
+              <div className="flex items-center">
+                <label className="mr-2">Selecciona Personaje 2:</label>
+                <select value={player2} onChange={handleSelectPlayer2} className="mt-2 text-black">
                   <option value="Goku">Goku</option>
                   <option value="Vegeta">Vegeta</option>
                   <option value="Piccolo">Piccolo</option>
@@ -121,12 +122,12 @@ export default function Minijuego() {
         )}
 
         {gameStarted && (
-          <div className="absolute w-full h-full bg-cover bg-center"
+          <div className="relative w-full h-full bg-cover bg-center"
             style={{ backgroundImage: "url('/fight_namek.jpeg')" }}>
             <div className="absolute inset-0 bg-black opacity-60"></div>
 
             <div className="relative z-10 flex flex-col items-center mt-6 space-y-4">
-              <h2 className="text-2xl mb-4">¡A presionar teclas!</h2>
+              <h2 className="text-2xl mb-4">¡Entreguen todo su ki!</h2>
               <p>Jugador 1 (A) vs Jugador 2 (L)</p>
               <p className="mt-2">Tiempo restante: {timeLeft} segundos</p>
 
@@ -136,7 +137,7 @@ export default function Minijuego() {
               </div>
 
               <div className="mt-6">
-                <Image src="/power_fight.gif" alt="Power Fight" width={500} height={180} className="max-w-full" />
+                <Image src="/power_fight.gif" alt="Power Fight" width={300} height={180} className="max-w-full" />
               </div>
             </div>
           </div>
