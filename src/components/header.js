@@ -8,7 +8,7 @@ export default function Header() {
           alt="Dragon Ball Logo"
           className="h-16 mr-2"
         />
-        <h1 className="text-white text-2xl font-bold">Dragon Ball Pokedex</h1>
+        <h1 className="text-white text-2xl font-bold">Dragon Ball DragonDex</h1>
       </header>
     );
   }
