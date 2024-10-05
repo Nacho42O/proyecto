@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from 'next/link'; // Importamos Link para navegación
 import Header from '../../components/Header'; // Importamos Header
 import Footer from '../../components/Footer'; // Importamos Footer
 
@@ -41,13 +42,17 @@ export default function Minijuego() {
   const endGame = () => {
     setGameStarted(false);
     setGameOver(true);
-    if (player1Clicks > player2Clicks) {
-      setWinner("Jugador 1");
-    } else if (player2Clicks > player1Clicks) {
-      setWinner("Jugador 2");
-    } else {
-      setWinner("Empate");
-    }
+    
+    // Esperar medio segundo antes de determinar el ganador
+    setTimeout(() => {
+      if (player1Clicks > player2Clicks) {
+        setWinner("Jugador 1");
+      } else if (player2Clicks > player1Clicks) {
+        setWinner("Jugador 2");
+      } else {
+        setWinner("Empate");
+      }
+    },);
   };
 
   // Función para manejar las teclas presionadas
@@ -72,9 +77,23 @@ export default function Minijuego() {
     <div className="flex flex-col min-h-screen bg-black text-white">
       <Header /> {/* Header agregado */}
 
-      <div className="flex flex-col items-center justify-center flex-grow relative">
+      {/* Botón de retorno */}
+      <Link href="/" className="absolute top-4 left-4 bg-orange-700 text-white py-2 px-4 rounded-lg shadow-2xl">
+        Volver
+      </Link>
+
+      <div className="flex flex-col items-center justify-center flex-grow relative inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/torneo.png')",
+        }}>
         {!gameStarted && (
-          <div className="flex flex-col items-center space-y-4">
+          <div className="flex flex-col items-center space-y-4 my-4">
+            <div className="text-4xl font-bold py-4">
+              Bienvenido a la batalla de poder!
+            </div>
+            <div className="text-sm py-4 font-bold ">
+              El jugador 1 debe presionar rápidamente la tecla (A) y el jugador 2 la tecla (L), ¡solo tienen 5 segundos!
+            </div>
             <div>
               <label>Selecciona Jugador 1:</label>
               <select value={player1} onChange={handleSelectPlayer1} className="ml-2 text-black">
@@ -182,7 +201,7 @@ export default function Minijuego() {
             </div>
             <button
               onClick={startGame}
-              className="bg-green-500 text-white px-4 py-4 rounded-lg mt-4 hover:bg-green-600"
+              className="bg-green-500 text-white px-4 py-2 rounded-lg mt-4 hover:bg-green-600"
             >
               Jugar de nuevo
             </button>

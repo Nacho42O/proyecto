@@ -68,7 +68,7 @@ export default function Personaje() {
       <Header /> {/* Insertamos el Header */}
 
       {/* Botón de retorno */}
-      <Link href="/" className="absolute top-4 left-4 bg-orange-700 text-white py-2 px-4 rounded-lg shadow-2xl">
+      <Link href="/" className="absolute top-4 left-4 bg-orange-700 text-white py-2 px-4 rounded-lg shadow-">
         Volver
       </Link>
 
