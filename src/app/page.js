@@ -1,6 +1,6 @@
 "use client";
 
-import Header from '../components/Header';
+import Header from '../components/header';
 import Greeting from '../components/Greeting';
 import CharacterList from '../components/CharacterList';
 import Footer from '../components/Footer';
@@ -12,6 +12,9 @@ export default function Home() {
       <div>
         <Header />
         <Greeting />
+        <div className="text-center font-bold text-xl text-black"> 
+          Aquí puedes obtener información del personaje que quieras:
+        </div>
         <CharacterList />
         <MinijuegoButton />
       </div>
