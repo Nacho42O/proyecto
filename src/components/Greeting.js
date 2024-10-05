@@ -11,8 +11,8 @@ export default function Greeting() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center bg-black p-4"> {/* Removed min-h-screen */}
-      <h2 className="text-4xl font-bold mb-4 text-white">Página Básica</h2>
+    <div className="flex flex-col items-center justify-center p-4"> {/* Removed min-h-screen */}
+      <h2 className="text-4xl font-bold mb-4 text-black">Bienvenido!</h2>
       <form onSubmit={handleSubmit} className="mb-4">
         <input
           type="text"
@@ -28,7 +28,7 @@ export default function Greeting() {
           Saludar
         </button>
       </form>
-      {greeting && <p className="text-lg text-blue-600">{greeting}</p>}
+      {greeting && <p className="text-lg text-black font-bold">{greeting}</p>}
     </div>
   );
 }
