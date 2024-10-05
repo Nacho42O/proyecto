@@ -121,7 +121,7 @@ export default function Minijuego() {
         )}
 
         {gameStarted && (
-          <div className="relative w-full h-full bg-cover bg-center"
+          <div className="absolute w-full h-full bg-cover bg-center"
             style={{ backgroundImage: "url('/fight_namek.jpeg')" }}>
             <div className="absolute inset-0 bg-black opacity-60"></div>
 
@@ -136,7 +136,7 @@ export default function Minijuego() {
               </div>
 
               <div className="mt-6">
-                <Image src="/power_fight.gif" alt="Power Fight" width={300} height={180} className="max-w-full" />
+                <Image src="/power_fight.gif" alt="Power Fight" width={500} height={180} className="max-w-full" />
               </div>
             </div>
           </div>
